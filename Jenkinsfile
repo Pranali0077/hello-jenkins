@@ -72,9 +72,9 @@ pipeline {
             }
         }
 
-        stage('Push') {
-
-            steps {
+       stage('Push') {
+    when { expression { false } }
+    steps {
 
                 script {
 
