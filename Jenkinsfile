@@ -18,19 +18,11 @@ def awsRun(cmd) {
 }
 
 def ecrLogin() {
-    awsRun """
-        aws ecr get-login-password --region ${env.REGION} |
-        docker login --username AWS --password-stdin ${env.REGISTRY}
-    """
+    awsRun "aws ecr get-login-password --region ${env.REGION} | docker login --username AWS --password-stdin ${env.REGISTRY}"
 }
 
 def deploy() {
-    awsRun """
-        aws ssm send-command --region ${env.REGION} \
-        --instance-ids ${env.INSTANCE} \
-        --document-name AWS-RunShellScript \
-        --parameters file://deploy.json
-    """
+    awsRun "aws ssm send-command --region ${env.REGION} --instance-ids ${env.INSTANCE} --document-name AWS-RunShellScript --parameters file://deploy.json"
 }
 
 pipeline {
