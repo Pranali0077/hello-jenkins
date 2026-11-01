@@ -38,7 +38,7 @@ pipeline {
     agent any
 
     environment {
-
+         PATH     = "C:\\Users\\baisk\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin;${PATH}"
         REGION   = 'ap-south-1'
 
         ACCOUNT  = 'YOUR_AWS_ACCOUNT_ID'
