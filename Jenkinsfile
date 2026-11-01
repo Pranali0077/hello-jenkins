@@ -17,7 +17,7 @@ pipeline {
 
    IMG = "${REPO}:${BUILD_NUMBER}"
 
- REMOTE = "${REGISTRY}/${REPO}:latest"
+  REMOTE = "${REGISTRY}/${REPO}:latest"
 
 }
 def run(cmd) { if (isUnix()) { sh cmd) else { bat cmd } }
