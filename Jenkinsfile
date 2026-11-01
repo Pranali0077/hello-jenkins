@@ -10,7 +10,7 @@ def awsRun(cmd) {
     withCredentials([
         string(credentialsId: 'aws-key-id',
                variable: 'AWS_ACCESS_KEY_ID'),
-        string(credentialsId: 'aws-secret',
+        string(credentialsId: 'aws-key-id',
                variable: 'AWS_SECRET_ACCESS_KEY')
     ]) {
         run(cmd)
