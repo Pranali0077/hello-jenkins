@@ -37,7 +37,7 @@ stages {
       run "docker push ${REMOTE}"
     } } }
     stage('Deploy') {
-      when { not { environment name: 'INSTANCE', value: 'none' } }
+      when { not { environment name: 'INSTANCE', value: 'i-0fee05e8a7b3837e0' } }
       steps { script { deploy() } }
     }
   }
